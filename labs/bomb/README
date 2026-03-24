@@ -1,0 +1,27 @@
+This is an x86-64 bomb for self-study students. 
+
+对bomb反汇编
+objdump -d bomb > bomb.asm
+--------------------
+gdb bomb
+b phase_1
+run 
+ni
+x/s $rsi
+---------------------
+gdb ./bomb 
+run ans.txt
+----------------------
+b *0x400fbe
+p $eax
+
+(gdb) x/8gx 0x402470
+0x402470:       0x0000000000400f7c      0x0000000000400fb9
+0x402480:       0x0000000000400f83      0x0000000000400f8a
+0x402490:       0x0000000000400f91      0x0000000000400f98
+0x4024a0:       0x0000000000400f9f      0x0000000000400fa6
+switch顺序不是肉眼看的 还是需要查
+
+-------------------------
+info breakpoints
+diasm
