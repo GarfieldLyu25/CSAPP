@@ -1,0 +1,1 @@
+./hex2raw < ans.txt | ./ctarget -q
